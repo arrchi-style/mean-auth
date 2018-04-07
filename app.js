@@ -24,7 +24,7 @@ const app = express();
 const users = require('./routes/users');
 
 // Port Number
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8080; //через неправильно вказаний порт крешилась аплікуха щоб подивитись логи heroku команда 'heroku logs --tail'
 
 //Cors Middleware
 app.use(cors());
