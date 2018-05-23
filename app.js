@@ -22,6 +22,8 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 
 const users = require('./routes/users');
+const movies = require('./routes/movies');
+
 
 // Port Number
 const port = process.env.PORT || 8080; //через неправильно вказаний порт крешилась аплікуха щоб подивитись логи heroku команда 'heroku logs --tail'
@@ -43,6 +45,9 @@ require('./config/passport')(passport);
 
 // User Route
 app.use('/users', users);
+
+// Movie Route
+app.use('/movies', movies);
 
 // Index Route
 app.get('/', (req, res) => {

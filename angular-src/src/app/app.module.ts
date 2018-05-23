@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';       //відправка даних з форми
 import { HttpModule } from '@angular/http';         //відправка даних по HTTP
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,7 +16,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';    //цей модуль відповідає за валідацію даних
 import { AuthService } from './services/auth.service';            //цей модуль відповідає за автентифікацію
-import { FlashMessagesModule } from 'angular2-flash-messages';    //цей модуль відповідає за вивід повідомленнь
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { SliderComponent } from './components/home/slider/slider.component';    //цей модуль відповідає за вивід повідомленнь
 import { AuthGuard } from './guards/auth.guards';
 
 const appRoutes: Routes = [
@@ -28,7 +31,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+    SliderComponent,   AppComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
@@ -42,6 +45,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot(),
+    HttpClientModule
   ],
   providers: [ValidateService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

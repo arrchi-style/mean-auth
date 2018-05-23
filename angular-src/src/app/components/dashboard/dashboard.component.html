@@ -1,2 +1,9 @@
-<h2 class="page-header text-center">Dashboard</h2>
-<p>Welcome to your Dashboard</p>
+<h2 class="page-header text-center">Розклад сеансів у Львові (King Cross Leopolis)</h2>
+<p>Оновлюється щосереди після 14:00 на один тиждень вперед, з четверга по наступну середу</p>
+
+<ul *ngFor="let movie of movies">
+    <li class="movie">
+        <h3>Назва фільму: <span> {{movie.movie}}</span></h3>
+        <h3>Ціна фільму: <span> {{movie.price}}</span></h3>
+    </li>
+</ul>

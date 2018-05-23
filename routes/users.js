@@ -64,4 +64,9 @@ router.get('/profile', passport.authenticate('jwt', { success: false }), (req, r
     res.send({ user: req.user })
 });
 
+
+router.get('/movies', (req, res) => {
+    res.send({ movie: 'Marvel' }, { movie: 'Dedpul' }, { movie: 'Black Panter' })
+})
+
 module.exports = router;
